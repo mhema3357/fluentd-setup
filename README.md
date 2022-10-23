@@ -1,7 +1,7 @@
 # Fluentd Setup on Sandbox using Kubernetes
 * This is simple setup for running fluentd on Ubuntu OS 
 ### Installation 
-#### Installation involves five steps *
+#### Installation involves five steps 
 
 Step - 1:
 - Check out fluentd-setup repo
