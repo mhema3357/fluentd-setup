@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: fluentd
+  name: fluentd
+spec:
+  ports:
+  - name: 80-24220
+    port: 80 # The service will listen for requests on this port
+    protocol: TCP
+    targetPort: 24220 # The service sends traffic it receives to these container ports on the target pods
+  selector:
+    k8s-app: fluentd-logging # Establishes which pods the service submits traffic to
+  type: ClusterIP
