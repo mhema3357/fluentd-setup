@@ -16,16 +16,16 @@ if [ "$os_version" = "Ubuntu" ]; then
 		apt-get update -y
 		apt-get install docker-ce docker-ce-cli containerd.io -y
 
-cat <<EOF | sudo tee /etc/docker/daemon.json
-{
-"exec-opts": ["native.cgroupdriver=systemd"],
-"log-driver": "json-file",
-"log-opts": {
-"max-size": "100m"
-},
-"storage-driver": "overlay2"
-}
-EOF
+		cat <<EOF | tee /etc/docker/daemon.json
+		{
+		"exec-opts": ["native.cgroupdriver=systemd"],
+		"log-driver": "json-file",
+		"log-opts": {
+		"max-size": "100m"
+		},
+		"storage-driver": "overlay2"
+		}
+		EOF
 
 		systemctl enable docker && systemctl daemon-reload && systemctl restart docker && systemctl status docker
 	fi
