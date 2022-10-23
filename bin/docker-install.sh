@@ -25,7 +25,7 @@ if [ "$os_version" = "Ubuntu" ]; then
 		},
 		"storage-driver": "overlay2"
 		}
-		EOF
+	EOF
 
 		systemctl enable docker && systemctl daemon-reload && systemctl restart docker && systemctl status docker
 	fi
