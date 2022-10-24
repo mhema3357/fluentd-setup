@@ -29,7 +29,7 @@ spec:
             memory: 200Mi
         env:
         - name: FLUENTD_CONF
-          value: fluent-k8s.conf
+          value: fluentd-configmap.conf
         volumeMounts:
         - name: fluentd-conf
           mountPath: /fluentd/etc
